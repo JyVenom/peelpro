@@ -1,28 +1,131 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+    window.addEventListener("resize", function(event){
+        setIsOpen(false);
+    })
   return (
-    <nav className="w-full p-8 flex flex-row items-center justify-between">
+    <nav className="relative w-full p-8 flex flex-row items-center justify-between">
+              <div className="md:flex hidden">
       <Timer />
-      <img className="w-16 h-16" src={"/banana.svg"} />
-      <Socials/>
+      </div>
+      <img
+        className="z-10 w-16 h-16 md:absolute md:left-1/2 md:-translate-x-1/2"
+        src={"/banana.svg"}
+      />
+      <div className="z-10 md:hidden flex">
+        <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+      <div className="hidden md:flex">
+        <Socials />
+      </div>
+        <MobileNav  isOpen={isOpen} setIsOpen={setIsOpen} /> 
+      
     </nav>
   );
 }
-
-
-function Socials() {
-    return <div>
-        <div className="flex flex-row w-full justify-between">
-            <img className="w-16 h-16 px-2 hover:scale-105" src = "/certik.svg" alt="My Happy SVG"/>
-            <img className="w-16 h-16 px-2 hover:scale-105" src = "/cmc.svg" alt="My Happy SVG"/>
-            <img className="w-16 h-16 px-2 hover:scale-105" src = "/twitter.svg" alt="My Happy SVG"/>
-            <img className="w-16 h-16 px-2 hover:scale-105" src = "/telegram.svg" alt="My Happy SVG"/>
+function MobileNav({ isOpen, setIsOpen }: OpenProps){
+    const [init, setInit] = useState(false)
+    useEffect(()=>{
+        if (isOpen){
+            setInit(true)
+        }
+    },[isOpen])
+    return (
+        <div className={`flex justify-center items-center bg-[#FDFD96] top-0 left-0 absolute w-screen ${init ? "" : "hidden"} h-screen ${isOpen ? "slideIn" : "slideOut"}`}>
+                <VerticalSocials/>
         </div>
-    </div>;
-  }
-  
+    )
+}
+interface OpenProps {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+function Hamburger({ isOpen, setIsOpen }: OpenProps) {
+  // const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <button onClick={handleClick} className="grid justify-items-center gap-1.5">
+      <span
+        className={`h-1 w-8 rounded-full bg-black transition ${
+          isOpen ? "rotate-45 translate-y-2.5" : ""
+        } "`}
+      ></span>
+      <span
+        className={`h-1 w-8 rounded-full bg-black ${
+          isOpen ? "scale-x-0" : ""
+        } transition`}
+      ></span>
+      <span
+        className={`h-1 w-8 rounded-full bg-black ${
+          isOpen ? "-rotate-45 -translate-y-2.5" : ""
+        }`}
+      ></span>
+    </button>
+  );
+}
+function VerticalSocials(){
+    return (
+        <div>
+          <div className="flex flex-col w-full justify-between">
+            <img
+              className="w-24 h-24 py-4 hover:scale-105"
+              src="/certik.svg"
+              alt="My Happy SVG"
+            />
+            <img
+              className="w-24 h-24 py-4 hover:scale-105"
+              src="/cmc.svg"
+              alt="My Happy SVG"
+            />
+            <img
+              className="w-24 h-24 py-4 hover:scale-105"
+              src="/twitter.svg"
+              alt="My Happy SVG"
+            />
+            <img
+              className="w-24 h-24 py-4 hover:scale-105"
+              src="/telegram.svg"
+              alt="My Happy SVG"
+            />
+          </div>
+        </div>
+      );
+}
+function Socials() {
+  return (
+    <div>
+      <div className="flex flex-row w-full justify-between">
+        <img
+          className="w-16 h-16 px-2 hover:scale-105"
+          src="/certik.svg"
+          alt="My Happy SVG"
+        />
+        <img
+          className="w-16 h-16 px-2 hover:scale-105"
+          src="/cmc.svg"
+          alt="My Happy SVG"
+        />
+        <img
+          className="w-16 h-16 px-2 hover:scale-105"
+          src="/twitter.svg"
+          alt="My Happy SVG"
+        />
+        <img
+          className="w-16 h-16 px-2 hover:scale-105"
+          src="/telegram.svg"
+          alt="My Happy SVG"
+        />
+      </div>
+    </div>
+  );
+}
+
 async function getCountdown() {
   const res = await fetch("/api/countdown");
   if (!res.ok) {
@@ -52,12 +155,12 @@ function Timer() {
     return false;
   };
   const format = (num: number) => {
-    if (num < 10){
-        return "0" + num
+    if (num < 10) {
+      return "0" + num;
     } else {
-        return num
+      return num;
     }
-  }
+  };
   useEffect(() => {
     const interval = setInterval(async () => {
       const data = await getCountdown();
@@ -87,9 +190,7 @@ function Timer() {
               Days
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">
-            :
-          </h3>
+          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
           <div className="timer w-8">
             <div className="">
               <h3 className="countdown-element hours font-red font-semibold text-2xl text-[#ffe135] text-center">
@@ -100,9 +201,7 @@ function Timer() {
               Hrs
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">
-            :
-          </h3>
+          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
           <div className="timer w-8">
             <div className="">
               <h3 className="countdown-element minutes font-red font-semibold text-2xl text-[#ffe135] text-center">
@@ -113,9 +212,7 @@ function Timer() {
               Mins
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">
-            :
-          </h3>
+          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
           <div className="timer w-8">
             <div className="">
               <h3 className="countdown-element seconds font-red font-semibold text-2xl text-[#ffe135] text-center">
@@ -128,8 +225,6 @@ function Timer() {
           </div>
         </div>
       )}
-    
     </div>
   );
 }
-
