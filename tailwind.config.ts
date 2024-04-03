@@ -15,7 +15,8 @@ const config: Config = {
       },
       fontFamily: {
         monkey: ["Happy Monkey", "system-ui"],
-        red: ["Red Hat Display", "sans-serif"]
+        red: ["Red Hat Display", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"]
       },
     },
   },
