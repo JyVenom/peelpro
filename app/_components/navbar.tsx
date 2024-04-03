@@ -50,17 +50,17 @@ function Hamburger({ isOpen, setIsOpen }: OpenProps) {
   return (
     <button onClick={handleClick} className="grid justify-items-center gap-1.5">
       <span
-        className={`h-1 w-8 rounded-full bg-black transition ${
+        className={`h-1 w-8 rounded-full bg-[#ffe135] transition ${
           isOpen ? "rotate-45 translate-y-2.5" : ""
         } "`}
       ></span>
       <span
-        className={`h-1 w-8 rounded-full bg-black ${
+        className={`h-1 w-8 rounded-full bg-[#ffe135] ${
           isOpen ? "scale-x-0" : ""
         } transition`}
       ></span>
       <span
-        className={`h-1 w-8 rounded-full bg-black ${
+        className={`h-1 w-8 rounded-full bg-[#ffe135] ${
           isOpen ? "-rotate-45 -translate-y-2.5" : ""
         }`}
       ></span>
