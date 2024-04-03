@@ -44,8 +44,6 @@ interface OpenProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 function Hamburger({ isOpen, setIsOpen }: OpenProps) {
-  // const [isOpen, setIsOpen] = useState(false);
-
   const handleClick = () => {
     setIsOpen(!isOpen);
   };

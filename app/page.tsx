@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <main className="flex bg-cover bg-[url('/poly-background.svg')] flex-col justify-start items-center min-h-screen w-full h-full">
       <Navbar/>
-      {/* <Header/>
-      <Description/>
+      <Header/>
+      {/* <Description/>
       <Buy/> */}
     </main>
   );
