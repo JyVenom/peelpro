@@ -3,9 +3,12 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(()=>{
     window.addEventListener("resize", function(event){
         setIsOpen(false);
     })
+  },[])
+    
   return (
     <nav className="relative w-full p-8 flex flex-row items-center justify-between">
               <div className="md:flex hidden">
@@ -50,17 +53,17 @@ function Hamburger({ isOpen, setIsOpen }: OpenProps) {
   return (
     <button onClick={handleClick} className="grid justify-items-center gap-1.5">
       <span
-        className={`h-1 w-8 rounded-full bg-[#ffe135] transition ${
+        className={`h-1 w-8 rounded-full bg-brown transition ${
           isOpen ? "rotate-45 translate-y-2.5" : ""
         } "`}
       ></span>
       <span
-        className={`h-1 w-8 rounded-full bg-[#ffe135] ${
+        className={`h-1 w-8 rounded-full bg-brown ${
           isOpen ? "scale-x-0" : ""
         } transition`}
       ></span>
       <span
-        className={`h-1 w-8 rounded-full bg-[#ffe135] ${
+        className={`h-1 w-8 rounded-full bg-brown ${
           isOpen ? "-rotate-45 -translate-y-2.5" : ""
         }`}
       ></span>
@@ -169,55 +172,55 @@ function Timer() {
   }, []);
   return (
     <div className="flex flex-col items-start">
-      <h2 className="font-red uppercase font-medium text-[#ffe135] ">
+      <h2 className="font-red uppercase font-medium text-brown ">
         Next price increase in ...
       </h2>
       {!finished ? (
-        <h2 className="text-lg font-red font-semibold uppercase text-[#ffe135] ">
+        <h2 className="text-lg font-red font-semibold uppercase text-brown ">
           {countdown.message}{" "}
         </h2>
       ) : (
         <div className="flex items-start justify-center w-full gap-4 count-down-main">
           <div className="timer w-8">
             <div className="">
-              <h3 className="countdown-element days font-red font-semibold text-2xl text-[#ffe135] text-center">
+              <h3 className="countdown-element days font-red font-semibold text-2xl text-brown text-center">
                 {format(countdown.days)}
               </h3>
             </div>
-            <p className="text-xs font-normal text-[#ffe135] mt-1 text-center w-full">
+            <p className="text-xs font-normal text-brown mt-1 text-center w-full">
               Days
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
+          <h3 className="font-red font-semibold text-2xl text-brown">:</h3>
           <div className="timer w-8">
             <div className="">
-              <h3 className="countdown-element hours font-red font-semibold text-2xl text-[#ffe135] text-center">
+              <h3 className="countdown-element hours font-red font-semibold text-2xl text-brown text-center">
                 {format(countdown.hours)}
               </h3>
             </div>
-            <p className="text-xs font-normal text-[#ffe135] mt-1 text-center w-full">
+            <p className="text-xs font-normal text-brown mt-1 text-center w-full">
               Hrs
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
+          <h3 className="font-red font-semibold text-2xl text-brown">:</h3>
           <div className="timer w-8">
             <div className="">
-              <h3 className="countdown-element minutes font-red font-semibold text-2xl text-[#ffe135] text-center">
+              <h3 className="countdown-element minutes font-red font-semibold text-2xl text-brown text-center">
                 {format(countdown.minutes)}
               </h3>
             </div>
-            <p className="text-xs font-normal text-[#ffe135] mt-1 text-center w-full">
+            <p className="text-xs font-normal text-brown mt-1 text-center w-full">
               Mins
             </p>
           </div>
-          <h3 className="font-red font-semibold text-2xl text-[#ffe135]">:</h3>
+          <h3 className="font-red font-semibold text-2xl text-brown">:</h3>
           <div className="timer w-8">
             <div className="">
-              <h3 className="countdown-element seconds font-red font-semibold text-2xl text-[#ffe135] text-center">
+              <h3 className="countdown-element seconds font-red font-semibold text-2xl text-brown text-center">
                 {format(countdown.seconds)}
               </h3>
             </div>
-            <p className="text-xs font-normal text-[#ffe135] mt-1 text-center w-full">
+            <p className="text-xs font-normal text-brown mt-1 text-center w-full">
               Secs
             </p>
           </div>

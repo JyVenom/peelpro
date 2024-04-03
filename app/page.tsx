@@ -6,11 +6,13 @@ import Buy from "./_components/buy";
 
 export default function Home() {
   return (
-    <main className="flex bg-cover bg-[url('/poly-background.svg')] flex-col justify-start items-center min-h-screen w-full h-full">
+    <main className="flex bg-cover bg-[url('/yellow.svg')] min-h-screen w-full h-full">
+      <div className=" flex w-full min-h-screen h-full flex-col max-w-screen-2xl justify-start items-center">
       <Navbar/>
       <Header/>
-      {/* <Description/>
-      <Buy/> */}
+      <Description/>
+      </div>
+      {/* <Buy/> */}
     </main>
   );
 }
