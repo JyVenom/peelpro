@@ -2,7 +2,7 @@
 import Navbar from "./_components/navbar/Navbar";
 import Header from "./_components/header";
 import Description from "./_components/description";
-import Buy from "./_components/Buy"
+import Buy from "./_components/Buy";
 import { useEffect, useState } from "react";
 import Loading from "./_components/Loading";
 
