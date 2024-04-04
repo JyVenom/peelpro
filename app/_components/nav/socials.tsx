@@ -8,7 +8,7 @@ interface SocialIconProps {
 function VerticalSocialIcon({ image, url, alt }: SocialIconProps) {
   return (
     <a href={url} target="_blank">
-      <Image className="w-24 h-24 py-4 hover:scale-105" src={image} alt={alt} />
+      <Image width={96} height={96} className="w-24 h-24 py-4 hover:scale-105" src={image} alt={alt} />
     </a>
   );
 }
@@ -43,7 +43,7 @@ export function VerticalSocials() {
 function HorizontalSocialIcon({ image, url, alt }: SocialIconProps) {
   return (
     <a href={url} target="_blank">
-      <Image className="w-16 h-16 px-2 hover:scale-105" src={image} alt={alt} />
+      <Image width={64} height={64} className="w-16 h-16 px-2 hover:scale-105" src={image} alt={alt} />
     </a>
   );
 }

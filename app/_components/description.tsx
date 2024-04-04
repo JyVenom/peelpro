@@ -3,7 +3,7 @@ export default function Description() {
   return (
     <div className="flex flex-wrap overflow-hidden justify-center px-8  max-w-screen-xl">
       <div className="flex flex-row items-center overflow-hidden min-w-72 p-4">
-        <Image className="h-16" src={"/money.svg"} alt="money"/>
+        <Image width={64} height={64} className="w-16 h-16" src={"/money.svg"} alt="money"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
           <h4 className="text-md font-bold font-red">Buy Back & Burn System</h4>
           <p className="text-sm font-red">
@@ -13,7 +13,7 @@ export default function Description() {
         </div>
       </div>
       <div className="flex flex-row items-center overflow-hidden min-w-72 p-4">
-        <Image className="h-16" src={"/brain.svg"} alt="brain"/>
+        <Image width={64} height={64} className="w-16 h-16" src={"/brain.svg"} alt="brain"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
           <h4 className="text-md font-bold font-red">
             1st Decentralized Hedge Fund
@@ -25,7 +25,7 @@ export default function Description() {
         </div>
       </div>
       <div className="flex flex-row items-center overflow-hidden min-w-72 p-4">
-        <Image className="h-16" src={"/coin.svg"} alt="coin"/>
+        <Image width={64} height={64} className="w-16 h-16" src={"/coin.svg"} alt="coin"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
           <h4 className="text-md font-bold font-red">
             30% More Profitable Than The Market
