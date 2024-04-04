@@ -44,7 +44,7 @@ export default function Home() {
     );
 
   return (
-    <main className="flex bg-cover bg-[url('/background.svg')] full">
+    <main className="flex overflow-y-scroll bg-cover bg-fixed bg-center bg-no-repeat bg-[url('/background.svg')] full">
       <div className=" flex full flex-col max-w-screen-2xl center">
         <Navbar
           date={countdownDate}

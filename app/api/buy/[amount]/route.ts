@@ -12,19 +12,30 @@ export async function POST(
       managed: {
         methods: [
           {
-            network: "Solana",
-            token: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-            discountPercentOff: 0,
+            network: "Bitcoin",
+          },
+          {
+            network: "Litecoin"
+          },
+          {
+            network: "Cardano"
+          },
+          {
+            network: "Monero"
+          },
+          {
+            network: "Dash"
+          },
+          {
+            network: "Dogecoin"
           },
           {
             network: "Ethereum",
-            token: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-            discountPercentOff: 0,
+            // token: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
           },
           {
             network: "Polygon",
-            token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-            discountPercentOff: 0,
+            // token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
           },
         ],
       },
