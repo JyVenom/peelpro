@@ -1,7 +1,7 @@
 'use client'
 import { OpenProps } from "./Navbar";
 import { useState, useEffect } from "react";
-import { VerticalSocials } from "./socials";
+import { VerticalSocials } from "./Socials";
 export default function MobileNav({ isOpen }: OpenProps) {
     const [init, setInit] = useState(false);
     useEffect(() => {
