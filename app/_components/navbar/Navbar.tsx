@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect, Dispatch, SetStateAction, FC } from "react";
-import Logo from "./Logo";
-import Countdown from "./Countdown";
-import { HorizontalSocials } from "./Socials"
-import { DesktopNavComponent, MobileNavComponent } from "./NavComponentType";
-import Hamburger from "./Hamburger";
-import MobileNav from "./MobileNavbar";
+import Logo from "./logo";
+import Countdown from "./countdown";
+import { HorizontalSocials } from "./socials"
+import { DesktopNavComponent, MobileNavComponent } from "./navcomponentypes";
+import Hamburger from "./hamburger";
+import MobileNav from "./mobilenavbar";
 interface NavProps {
   date: string
   onCountdownOver: ()=>void
