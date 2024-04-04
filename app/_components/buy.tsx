@@ -40,6 +40,22 @@ export default function Buy({ price, minOrder} : BuyProps) {
         handleValueChange(e, false);
       };
 
+    const handleClick = () => {
+        fetch("/api/buy", {
+            method: 'POST',
+            body: JSON.stringify({ amount: usd }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                window.location.href = data["checkoutSessionUrl"]
+            })
+            .catch(error => console.error('Error:', error));
+    };
+
   return (
     <div className="flex justify-center h-fit w-full px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
@@ -78,9 +94,9 @@ export default function Buy({ price, minOrder} : BuyProps) {
                 <input value = {nana} onChange={handleNANAChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>
         </div>
-        <div className={`${ (usd !=='' || nana !== '') && (Number(usd) < minOrder || Number(nana)/price < minOrder) ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
-        <button className="w-full h-20 rounded-2xl bg-brown">
-            <span>t</span>
+        {/*<div className={`${ (usd !=='' || nana !== '') && (Number(usd) < minOrder || Number(nana)/price < minOrder) ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>*/}
+        <button onClick={handleClick} className="w-full h-20 rounded-2xl bg-brown">
+            <span>Buy</span>
         </button>
       </div>
     </div>

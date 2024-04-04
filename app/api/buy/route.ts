@@ -1,4 +1,4 @@
-// import { supabaseClient } from "@/app/libs/supabase";
+import { supabaseClient } from "@/app/libs/supabase";
 
 export async function POST(req: Request) {
   const reqData = await req.json();
@@ -13,16 +13,12 @@ export async function POST(req: Request) {
             network: "Ethereum",
             token: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             discountPercentOff: 0,
-          },
-          {
-            network: "Polygon",
-            token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-            discountPercentOff: 0,
-          },
+          }
         ],
       },
     },
-    successUrl: "google.com",
+    successUrl: "https://www.google.com/",
+    cancelUrl: "https://example.com/",
     customizations: {
       leftPanelColor: "#ffe135",
       rightPanelColor: "#fffbc9",
@@ -33,7 +29,7 @@ export async function POST(req: Request) {
   };
   const headers = {
     "Content-Type": "application/json",
-    'Authorization': "eyJhZGRyZXNzIjpudWxsLCJvcmdhbml6YXRpb25faWQiOiJhMTA4NmU5OS04MzUzLTRhZDQtOGRlNy0zMWExMmZlYWRkMTAiLCJzZXNzaW9uX2lkIjoiNWI0NjAyYzMtZjExZC00MDlmLWFhNDgtM2I2MGRmOGQ1NmQ4IiwiZXhwaXJlZF9hdCI6IjIwMjUtMDQtMDRUMDU6NTM6MDIuNzU2Mjk4NDMxWiIsImlzX2FwaV90b2tlbiI6dHJ1ZX0=",
+    'Authorization': "eyJhZGRyZXNzIjpudWxsLCJvcmdhbml6YXRpb25faWQiOiJmYmZkNjMwMS05YTM4LTRlODYtODA2MS1kZGM5ODlhOTVkYjkiLCJzZXNzaW9uX2lkIjoiZWJkMjU3N2UtYmJlYi00YzJmLTg2YmMtNWVkYWEyNzI2ZTg5IiwiZXhwaXJlZF9hdCI6IjIwMjUtMDQtMDRUMDU6NTQ6NTAuOTk3ODkwMzQzWiIsImlzX2FwaV90b2tlbiI6dHJ1ZX0=",
   };
   const res = await fetch(url, {
     method: 'POST',
@@ -41,7 +37,7 @@ export async function POST(req: Request) {
     body: JSON.stringify(payload),
   })
   const data = await res.json()
-//     supabaseClient.from('sales')
-//   .insert({ id: 1, name: 'Denmark' })
+  supabaseClient.from('sales').insert({ checkout_id: data["checkoutSessionId"], amt: reqData.amount, success: 'false' })
+  console.log(Response.json(data))
   return Response.json(data)
 }
