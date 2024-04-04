@@ -11,6 +11,6 @@ export default async function Page({ params }: { params: { id: string } }){
 }
 
 async function Data(id: string){
-    const res = await fetch(`http://localhost:3000/api/success_code/${id}`, { cache: 'force-cache' })
+    const res = await fetch(`http://localhost:3000/api/success_code/${id}`, { next: { revalidate: 60 } })
     return res.json()
 }
