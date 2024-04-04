@@ -1,5 +1,5 @@
 'use client'
-import { OpenProps } from "./navbar";
+import { OpenProps } from "./hamburger";
 import { useState, useEffect } from "react";
 import { VerticalSocials } from "./socials";
 export default function MobileNav({ isOpen }: OpenProps) {

@@ -1,20 +1,17 @@
 "use client";
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
-import Logo from "./logo";
-import Countdown from "./countdown";
-import { HorizontalSocials } from "./socials"
-import { DesktopNavComponent, MobileNavComponent } from "./navcomponentypes";
-import Hamburger from "./hamburger";
-import MobileNav from "./mobilenavbar";
+import { useState, useEffect } from "react";
+import Logo from "./navbar/logo";
+import Countdown from "./navbar/countdown";
+import { HorizontalSocials  } from "./navbar/socials";
+import { DesktopNavComponent, MobileNavComponent } from "./navbar/navcomponentypes";
+import Hamburger from "./navbar/hamburger";
+import MobileNav from "./navbar/mobilenavbar";
 interface NavProps {
-  date: string
-  onCountdownOver: ()=>void
+  date: string;
+  onFinished: ()=>void;
 }
-export interface OpenProps {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
-export default function Navbar({date, onCountdownOver} : NavProps) {
+
+export default function Navbar({date, onFinished} : NavProps) {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     window.addEventListener("resize", function (event) {
@@ -25,7 +22,7 @@ export default function Navbar({date, onCountdownOver} : NavProps) {
     <nav className="relative w-full p-8">
       <div className="z-50 flex flex-row full items-center justify-between">
         <DesktopNavComponent>
-          <Countdown date={date} onFinished={onCountdownOver}/>
+          <Countdown date={date} onFinished={onFinished}/>
         </DesktopNavComponent>
         <Logo/>
         <MobileNavComponent>
@@ -35,6 +32,7 @@ export default function Navbar({date, onCountdownOver} : NavProps) {
           <HorizontalSocials />
         </DesktopNavComponent>
       </div>
+      
       <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );

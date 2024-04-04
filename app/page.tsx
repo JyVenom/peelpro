@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "./_components/navbar/navbar";
+import Navbar from "./_components/navbar";
 import Header from "./_components/header";
 import Description from "./_components/description";
 import Buy from "./_components/buy";
@@ -48,7 +48,7 @@ export default function Home() {
       <div className=" flex full flex-col max-w-screen-2xl center">
         <Navbar
           date={countdownDate}
-          onCountdownOver={() => {
+          onFinished={() => {
             setIsCountdownFinished(true);
           }}
         />
