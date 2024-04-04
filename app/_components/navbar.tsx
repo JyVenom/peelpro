@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 
-import Logo from "@/app/_components/logo";
-import Countdown from "@/app/_components/countdown";
-import { HorizontalSocials  } from "@/app/_components/socials";
-import { DesktopNavComponent, MobileNavComponent } from "@/app/_components/navcomponentypes";;
-import Hamburger from "@/app/_components/hamburger";
-import MobileNav from "@/app/_components/mobilenavbar";
+import Logo from "@/app/_components/nav/logo";
+import Countdown from "@/app/_components/nav/countdown";
+import { HorizontalSocials  } from "@/app/_components/nav/socials";
+import { DesktopNavComponent, MobileNavComponent } from "@/app/_components/nav/navcomponentypes";;
+import Hamburger from "@/app/_components/nav/hamburger";
+import MobileNav from "@/app/_components/nav/mobilenavbar";
 
 interface NavProps {
   date: string;
