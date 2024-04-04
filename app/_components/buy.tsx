@@ -1,57 +1,51 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-async function getPrice() {
-    const res = await fetch("/api/price");
-    
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    return res.json();
-  }
-  async function getMinOrder() {
-    const res = await fetch("/api/min-order");
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    return res.json();
-  }
-  
-export default async function Buy() {
-    const price = await getPrice();
-    const minOrder = await getMinOrder();
+interface BuyProps {
+    price: number;
+    minOrder: number;
+}
+export default function Buy({ price, minOrder} : BuyProps) {
     const [usd, setUSD] = useState<string>();
     const [nana, setNANA] = useState<string>();
-    const handleUSDChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value 
-        if (newValue === ''){
-            setUSD('')
-            setNANA('')
+    const handleValueChange = (
+        e: React.ChangeEvent<HTMLInputElement>,
+        isUSD: boolean
+      ) => {
+        const newValue = e.target.value;
+        if (newValue === '') {
+          setUSD('');
+          setNANA('');
         } else {
-            const num = Number(newValue)
+          const num = Number(newValue);
+          if (isUSD) {
             setUSD(newValue);
-            if (num >= minOrder){
-            setNANA(Math.round(num / price).toString());
+            if (num >= minOrder) {
+              setNANA(Math.round(num / price).toString());
             }
+          } else {
+            setNANA(newValue);
+            if (num >= minOrder / price) {
+              setUSD((Math.round(num * 100 * price) / 100).toString());
+            }
+          }
         }
       };
-    
-      const handleNANAChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        // const newValue = e.target.value 
-        // if (newValue === ''){
-        //     setUSD(null)
-        //     setNANA(null)
-        // } else {
-        //     setNANA(Number(newValue));
-        //     setUSD(Math.round(Number(newValue)*100 / conversion)/100);
-        // }
+      
+      const handleUSDChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        handleValueChange(e, true);
       };
+      
+      const handleNANAChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        handleValueChange(e, false);
+      };
+
   return (
     <div className="flex justify-center h-fit w-full px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
         <div className="flex justify-center items-center bg-brown w-fit px-4 absolute left-1/2 -translate-x-1/2 h-10 rounded-full top-0 -translate-y-1/2">
           <h4 className="text-pale font-red text-sm text-center">
-            1 Harambe AI = $ 0.224 USD
+            1 Harambe AI = $ {price} USD
           </h4>
         </div>
         <h3 className=" mt-4 font-red sm:text-2xl text-xl md:text-3xl text-brown font-semibold">
@@ -84,7 +78,10 @@ export default async function Buy() {
                 <input value = {nana} onChange={handleNANAChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>
         </div>
-        <div className={`${ usd !=='' && Number(usd) < minOrder ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
+        <div className={`${ (usd !=='' || nana !== '') && (Number(usd) < minOrder || Number(nana)/price < minOrder) ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
+        <button className="w-full h-20 rounded-2xl bg-brown">
+            <span>t</span>
+        </button>
       </div>
     </div>
   );

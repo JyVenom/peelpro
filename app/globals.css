@@ -22,7 +22,7 @@
 
 @layer utilities {
   .center {
-    @apply justify-start items-center
+    @apply justify-center items-center
   }
   .full {
     @apply w-full h-full

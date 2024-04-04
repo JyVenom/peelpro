@@ -4,25 +4,29 @@ import Header from "./_components/header";
 import Description from "./_components/description";
 import Buy from "./_components/buy";
 import { useEffect, useState } from "react";
+import Loading from "./_components/Loading";
 
 export default function Home() {
   const [isCountdownFinished, setIsCountdownFinished] = useState(true);
   const [countdownDate, setCountdownDate] = useState("");
+  const [price,setPrice] = useState(0);
+  const [minOrder, setMinOrder] = useState(0);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     if (isCountdownFinished) {
       setLoading(true);
-      fetch("/api/countdown")
+      fetch("/api/pre_sales_data")
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.date);
           setCountdownDate(data.date);
+          setMinOrder(data.minOrder);
+          setPrice(data.price);
           setLoading(false);
           setIsCountdownFinished(false);
         });
     }
   }, [isCountdownFinished]);
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return (<Loading/>)
 
   return (
     <main className="flex bg-cover bg-[url('/background.svg')] full">
@@ -33,11 +37,11 @@ export default function Home() {
             setIsCountdownFinished(true);
           }}
         />
-        {/* <Header />
+        <Header />
         <div className="flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy />
-        </div> */}
+          <Buy price = {price} minOrder={minOrder}/>
+        </div>
       </div>
     </main>
   );
