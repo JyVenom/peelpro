@@ -4,21 +4,20 @@ import Header from "./_components/header";
 import Description from "./_components/description";
 import Buy from "./_components/buy";
 import { useEffect, useState } from "react";
-import Loading from "./_components/loading";
 
 export default function Home() {
-  function placeOrder(amount: number){
+  function placeOrder(amount: number) {
     setLoading(true);
-      fetch(`/api/buy/${amount}`, {method: 'POST'})
-        .then((res) => res.json())
-        .then((data) => {
-          window.location.href = data.checkoutSessionUrl;
-          setLoading(false);
-        });
+    fetch(`/api/buy/${amount}`, { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.href = data.checkoutSessionUrl;
+        setLoading(false);
+      });
   }
   const [isCountdownFinished, setIsCountdownFinished] = useState(true);
   const [countdownDate, setCountdownDate] = useState("");
-  const [price,setPrice] = useState(0);
+  const [price, setPrice] = useState(0);
   const [minOrder, setMinOrder] = useState(0);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
@@ -35,7 +34,14 @@ export default function Home() {
         });
     }
   }, [isCountdownFinished]);
-  if (isLoading) return (<Loading/>)
+  if (isLoading)
+    return (
+      <div className="flex center flex-col full absolute top-0 left-0 bg-banana">
+        <h1 className="text-5xl font-red font-bold text-brown text-center">
+          Loading ...
+        </h1>
+      </div>
+    );
 
   return (
     <main className="flex bg-cover bg-[url('/background.svg')] full">
@@ -49,7 +55,7 @@ export default function Home() {
         <Header />
         <div className="flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy price={price} minOrder={minOrder} placeOrder={placeOrder}/>
+          <Buy price={price} minOrder={minOrder} placeOrder={placeOrder} />
         </div>
       </div>
     </main>

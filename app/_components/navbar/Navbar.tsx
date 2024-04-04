@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Dispatch, SetStateAction, FC } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import Logo from "./logo";
 import Countdown from "./countdown";
 import { HorizontalSocials } from "./socials"
