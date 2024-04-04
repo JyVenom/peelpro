@@ -12,7 +12,7 @@ export default function Home() {
       fetch(`/api/buy/${amount}`, {method: 'POST'})
         .then((res) => res.json())
         .then((data) => {
-          window.open(data.checkoutSessionUrl, '_blank');
+          window.location.href = data.checkoutSessionUrl;
           setLoading(false);
         });
   }
