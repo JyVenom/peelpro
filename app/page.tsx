@@ -65,9 +65,9 @@ export default function Home() {
         </div>
       </Container>
       <Container background={"[url('/brown.svg')]"}>
-        {/* <div className="w-screen h-screen"></div> */}
         <Info price={price} date={countdownDate}/>
       </Container>
+      
 
     </main>
   );
