@@ -1,5 +1,5 @@
 "use client"
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 
 interface BuyProps {
     price: number;
@@ -56,7 +56,7 @@ export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
           Join The Harambe AI Pre-Sale
         </h3>
         <p className="mt-2 text-brown font-red text-sm sm:text-md text-center">
-          You'll be directed to a secure checkout page where you can finalize
+          You will be directed to a secure checkout page where you can finalize
           your purchase using a variety of major cryptocurrencies.
         </p>
         <div className="flex justify-between w-full items-center py-6">

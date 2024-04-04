@@ -1,5 +1,5 @@
 'use client'
-import { OpenProps } from "./Navbar";
+import { OpenProps } from "./navbar";
 export default function Hamburger({ isOpen, setIsOpen }: OpenProps) {
     const handleClick = () => {
       setIsOpen(!isOpen);
