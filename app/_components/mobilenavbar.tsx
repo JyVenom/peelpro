@@ -1,6 +1,9 @@
 'use client'
-import { OpenProps } from "./hamburger";
-import { useState, useEffect } from "react";
+import { useState, useEffect  } from "react";
+
+export interface OpenProps {
+    isOpen: boolean;
+  }
 import { VerticalSocials } from "./socials";
 export default function MobileNav({ isOpen }: OpenProps) {
     const [init, setInit] = useState(false);

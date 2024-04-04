@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import Logo from "./navbar/logo";
-import Countdown from "./navbar/countdown";
-import { HorizontalSocials  } from "./navbar/socials";
-import { DesktopNavComponent, MobileNavComponent } from "./navbar/navcomponentypes";
-import Hamburger from "./navbar/hamburger";
-import MobileNav from "./navbar/mobilenavbar";
+
+import Logo from "@/app/_components/logo";
+import Countdown from "@/app/_components/countdown";
+import { HorizontalSocials  } from "@/app/_components/socials";
+import { DesktopNavComponent, MobileNavComponent } from "@/app/_components/navcomponentypes";;
+import Hamburger from "@/app/_components/hamburger";
+import MobileNav from "@/app/_components/mobilenavbar";
+
 interface NavProps {
   date: string;
   onFinished: ()=>void;
@@ -33,7 +35,7 @@ export default function Navbar({date, onFinished} : NavProps) {
         </DesktopNavComponent>
       </div>
       
-      <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileNav isOpen={isOpen}/>
     </nav>
   );
 }
