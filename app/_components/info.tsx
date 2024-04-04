@@ -5,6 +5,12 @@ interface InfoProps {
   date: string;
 }
 export default function Info({ price, date }: InfoProps) {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+    const tempDate = new Date(date)
+    const month = tempDate.getMonth()
+    const day = tempDate.getDate()
   return (
     <div className="flex flex-col xl:flex-row h-fit p-8 md:p-12 xl:p-20 w-full bg-brown">
         <div className="w-fit h-fit p-2">
@@ -35,7 +41,7 @@ export default function Info({ price, date }: InfoProps) {
           1 HARAMBE AI = <b>$ {price} USD</b>
         </p>
         <p className="text-sm text-banana font-red">
-          Hurry - Token price increases on April 4th!
+          Hurry - Token price increases on {monthNames[month]} {day}{day > 1 ? "th" : "st"}!
         </p>
       </div>
       </div>
