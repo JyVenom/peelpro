@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 import Logo from "@/app/_components/nav/logo";
 import Countdown from "@/app/_components/nav/countdown";
@@ -11,10 +11,11 @@ import MobileNav from "@/app/_components/nav/mobilenavbar";
 interface NavProps {
   date: string;
   onFinished: ()=>void;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Navbar({date, onFinished} : NavProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar({date, onFinished, isOpen, setIsOpen} : NavProps) {
   useEffect(() => {
     window.addEventListener("resize", function (event) {
       setIsOpen(false);

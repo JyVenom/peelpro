@@ -11,6 +11,9 @@ const config: Config = {
       'brown': "#6b3e26",
       'banana': "#ffe135",
       'pale': "#fffbc9",
+      'white': "#ffffff",
+      'black': "#000000",
+      'green': "#57C478"
     },
     extend: {
       fontFamily: {

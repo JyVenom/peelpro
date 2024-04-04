@@ -45,7 +45,7 @@ export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
       };
 
   return (
-    <div className="flex justify-center h-fit w-full px-8 my-16">
+    <div id="buy" className="flex justify-center h-fit w-full px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
         <div className="flex justify-center items-center bg-brown w-fit px-4 absolute left-1/2 -translate-x-1/2 h-10 rounded-full top-0 -translate-y-1/2">
           <h4 className="text-pale font-red text-sm text-center">
@@ -83,8 +83,8 @@ export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
             </div>
         </div>
         <div  className={`${ orderExists && invalidOrder ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
-        <button disabled={invalidOrder} onClick={()=>placeOrder(Number(usd))} className="disabled:bg-banana w-full h-20 rounded-2xl bg-brown flex center">
-            <span className="text-pale sm:text-xl md:text-2xl text-red uppercase">PROCEED TO CHECKOUT NOW</span>
+        <button disabled={invalidOrder} onClick={()=>placeOrder(Number(usd))} className="bg-banana w-full h-20 rounded-2xl flex center">
+            <span className="text-brown sm:text-xl md:text-2xl font-manrope font-semibold tracking-wider uppercase">PROCEED TO CHECKOUT NOW</span>
         </button>
       </div>
     </div>

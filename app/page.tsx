@@ -4,6 +4,8 @@ import Header from "./_components/header";
 import Description from "./_components/description";
 import Buy from "./_components/buy";
 import { useEffect, useState } from "react";
+import Info from "./_components/info";
+import { Container } from "./_components/container"
 
 export default function Home() {
   function placeOrder(amount: number) {
@@ -20,6 +22,8 @@ export default function Home() {
   const [price, setPrice] = useState(0);
   const [minOrder, setMinOrder] = useState(0);
   const [isLoading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     if (isCountdownFinished) {
       setLoading(true);
@@ -44,20 +48,27 @@ export default function Home() {
     );
 
   return (
-    <main className="flex overflow-y-scroll bg-cover bg-fixed bg-center bg-no-repeat bg-[url('/background.svg')] full">
-      <div className=" flex full flex-col max-w-screen-2xl center">
+    <main className={`${isOpen ? "max-h-screen overflow-x-hidden fixed" : ""} flex full flex-col`}>
+      <Container background={"[url('/background.svg')]"}>
         <Navbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
           date={countdownDate}
           onFinished={() => {
             setIsCountdownFinished(true);
           }}
         />
         <Header />
-        <div className="flex xl:flex-col flex-col-reverse">
+        <div className="relative w-full mb-12 items-center justify-start flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy price={price} minOrder={minOrder} placeOrder={placeOrder} />
+          <Buy  price={price} minOrder={minOrder} placeOrder={placeOrder} />
         </div>
-      </div>
+      </Container>
+      <Container background={"[url('/brown.svg')]"}>
+        {/* <div className="w-screen h-screen"></div> */}
+        <Info price={price} date={countdownDate}/>
+      </Container>
+
     </main>
   );
 }

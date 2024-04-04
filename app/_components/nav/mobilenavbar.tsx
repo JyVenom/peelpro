@@ -14,7 +14,7 @@ export default function MobileNav({ isOpen }: OpenProps) {
     }, [isOpen]);
     return (
       <div
-        className={`z-40 flex justify-center items-center bg-[#FDFD96] top-0 left-0 absolute w-screen ${
+        className={`z-40 flex justify-center items-center bg-[#FDFD96] top-0 left-0 fixed w-screen ${
           init ? "" : "hidden"
         } h-screen ${isOpen ? "slideIn" : "slideOut"}`}
       >
