@@ -1,14 +1,18 @@
 "use client"
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 interface BuyProps {
     price: number;
     minOrder: number;
+    placeOrder: (amount: number)=>void
 }
-export default function Buy({ price, minOrder} : BuyProps) {
+export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
     const [usd, setUSD] = useState<string>();
     const [nana, setNANA] = useState<string>();
-    const handleValueChange = (
+    const orderExists = (usd !=='' || nana !== '')
+    const invalidOrder =  (Number(usd) < minOrder || Number(nana)/price < minOrder)
+
+     const handleValueChange = (
         e: React.ChangeEvent<HTMLInputElement>,
         isUSD: boolean
       ) => {
@@ -78,9 +82,9 @@ export default function Buy({ price, minOrder} : BuyProps) {
                 <input value = {nana} onChange={handleNANAChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>
         </div>
-        <div className={`${ (usd !=='' || nana !== '') && (Number(usd) < minOrder || Number(nana)/price < minOrder) ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
-        <button className="w-full h-20 rounded-2xl bg-brown">
-            <span>t</span>
+        <div  className={`${ orderExists && invalidOrder ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
+        <button disabled={invalidOrder} onClick={()=>placeOrder(Number(usd))} className="disabled:bg-banana w-full h-20 rounded-2xl bg-brown flex center">
+            <span className="text-pale sm:text-xl md:text-2xl text-red uppercase">PROCEED TO CHECKOUT NOW</span>
         </button>
       </div>
     </div>

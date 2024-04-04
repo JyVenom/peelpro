@@ -1,10 +1,9 @@
 // import { supabaseClient } from "@/app/libs/supabase";
 
-export async function POST(req: Request) {
-  const reqData = await req.json();
+export async function POST(req: Request, { params }: { params: { amount: string } }) {
   const url = "https://api.radom.com/checkout_session";
   const payload = {
-    total: reqData.amount,
+    total: Number(params.amount),
     currency: "USD",
     gateway: {
       managed: {

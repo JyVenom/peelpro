@@ -2,11 +2,20 @@
 import Navbar from "./_components/navbar/Navbar";
 import Header from "./_components/header";
 import Description from "./_components/description";
-import Buy from "./_components/buy";
+import Buy from "./_components/Buy"
 import { useEffect, useState } from "react";
 import Loading from "./_components/Loading";
 
 export default function Home() {
+  function placeOrder(amount: number){
+    setLoading(true);
+      fetch(`/api/buy/${amount}`, {method: 'POST'})
+        .then((res) => res.json())
+        .then((data) => {
+          window.open(data.checkoutSessionUrl, '_blank');
+          setLoading(false);
+        });
+  }
   const [isCountdownFinished, setIsCountdownFinished] = useState(true);
   const [countdownDate, setCountdownDate] = useState("");
   const [price,setPrice] = useState(0);
@@ -40,7 +49,7 @@ export default function Home() {
         <Header />
         <div className="flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy price = {price} minOrder={minOrder}/>
+          <Buy price={price} minOrder={minOrder} placeOrder={placeOrder}/>
         </div>
       </div>
     </main>
