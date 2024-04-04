@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     colors: {
       'brown': "#6b3e26",
-      'banana': "ffe135",
-      'pale': "#fffbc9"
+      'banana': "#ffe135",
+      'pale': "#fffbc9",
     },
     extend: {
       fontFamily: {

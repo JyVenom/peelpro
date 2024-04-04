@@ -1,95 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Display:wght@300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Display:wght@300..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes slideFromTop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
+@layer base {
+  /* Removes arrows on number input */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slideToTop {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }
-.slideIn {
-  animation: slideFromTop 0.5s forwards;
-}
-.slideOut {
-  animation: slideToTop 0.5s forwards;
-}
-.gradient-background {
-  background: linear-gradient(179.4deg, rgb(12, 20, 69) -16.9%, rgb(71, 30, 84) 119.9%);
-}
-/* 
-label{
-  display:flex;
-   flex-direction:column;
-   width:70px;
-   cursor:pointer;
- }
- 
- label span{
-   background: #ffe135;
-   border-radius:10px;
-   height:7px;
-   margin: 7px 0;
-   transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
- 
- }
- 
- 
- span:nth-of-type(1){
-   width:50%;
-   
- }
- 
- span:nth-of-type(2){
-   width:100%;
- }
- 
- 
- span:nth-of-type(3){
-   width:75%;
+
+@layer components {
   
- }
- 
- 
- input[type="checkbox"]{
-   display:none;
- }
- 
- 
- input[type="checkbox"]:checked ~ span:nth-of-type(1){
-   transform-origin:bottom;
-   transform:rotatez(45deg) translate(8px,0px)
- }
- 
- 
- input[type="checkbox"]:checked ~ span:nth-of-type(2){
-   
-   transform-origin:top;
-   transform:rotatez(-45deg)
- }
- 
- 
- input[type="checkbox"]:checked ~ span:nth-of-type(3){
-   
-   transform-origin:bottom;
-   width:50%;
-   transform: translate(30px,-11px) rotatez(45deg);
- 
- }
-  */
+}
+
+@layer utilities {
+  .center {
+    @apply justify-start items-center
+  }
+  .full {
+    @apply w-full h-full
+  }
+  /* Slide in animation */
+  @keyframes slideFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideToTop {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  .slideIn {
+    animation: slideFromTop 0.5s forwards;
+  }
+  .slideOut {
+    animation: slideToTop 0.5s forwards;
+  }
+}
