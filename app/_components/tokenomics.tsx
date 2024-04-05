@@ -52,7 +52,7 @@ export default function Tokenomics() {
       </div>
       <div className="relative w-full lg:w-2/3 max-w-xl aspect-square hidden lg:flex lg:ml-12 xl:ml-20 ">
         <div className="w-fi absolute top-[5%] left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
-        <div className="w-fi absolute top-[-5%] left-1/2 -translate-x-10 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
+        <div className="w-fi absolute top-[-5%] left-1/2 -translate-x-10 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">10% CEX Listings</div>
 
         <div className="w-fi absolute top-0 left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
 

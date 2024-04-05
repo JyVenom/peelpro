@@ -2,16 +2,18 @@
 import { useState } from "react";
 
 interface BuyProps {
+    amountRaised: number;
+    goal: number;
     price: number;
     minOrder: number;
     placeOrder: (amount: number)=>void
 }
-export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
+export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } : BuyProps) {
     const [usd, setUSD] = useState<string>();
     const [nana, setNANA] = useState<string>();
     const orderExists = (usd !=='' || nana !== '')
     const invalidOrder =  (Number(usd) < minOrder || Number(nana)/price < minOrder)
-
+    const percentRaised = Math.max(100*amountRaised/goal, 10)
      const handleValueChange = (
         e: React.ChangeEvent<HTMLInputElement>,
         isUSD: boolean
@@ -62,10 +64,10 @@ export default function Buy({ price, minOrder, placeOrder } : BuyProps) {
         <div className="flex justify-between w-full items-center py-6">
           <div className="relative w-full h-2">
             <div className="absolute top-0 left-0 h-2 rounded-full w-full bg-banana"></div>
-            <div className="absolute top-0 left-0 h-2 rounded-full w-3/4 bg-brown"></div>
+            <div className="absolute top-0 left-0 h-2 rounded-full bg-brown" style={{ width: `${percentRaised}%`}}></div>
           </div>
           <span className=" pl-4 w-fit text-nowrap font-red text-brown text-md sm:text-lg">
-            USD Raised: <b>$ 6,740,557</b>
+            USD Raised: <b>$ {amountRaised}</b>
           </span>
         </div>
         <h3 className="text-brown font-red font-semibold sm:text-lg text-md md:text-xl">How many Harambe AI Tokens would you like to buy?</h3>

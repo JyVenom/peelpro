@@ -20,6 +20,8 @@ export default function Home() {
   }
   const [isCountdownFinished, setIsCountdownFinished] = useState(true);
   const [countdownDate, setCountdownDate] = useState("");
+  const [goal, setGoal] = useState(0);
+  const [amountRaised, setAmountRaised] = useState(0);
   const [price, setPrice] = useState(0);
   const [minOrder, setMinOrder] = useState(0);
   const [isLoading, setLoading] = useState(true);
@@ -28,15 +30,34 @@ export default function Home() {
   useEffect(() => {
     if (isCountdownFinished) {
       setLoading(true);
-      fetch("/api/pre_sales_data")
-        .then((res) => res.json())
-        .then((data) => {
-          setCountdownDate(data.date);
-          setMinOrder(data.minOrder);
-          setPrice(data.price);
-          setLoading(false);
-          setIsCountdownFinished(false);
-        });
+      Promise.all([fetch("/api/pre_sales_data")
+      .then((res) => res.json()), fetch("/api/sales")
+      .then((res) => res.json())]).then(([pre_sales_data, total_sales]) => {
+        setCountdownDate(pre_sales_data.date);
+        setMinOrder(pre_sales_data.minOrder);
+        setPrice(pre_sales_data.price);
+        setGoal(pre_sales_data.goal);
+        setAmountRaised(total_sales.raised)
+        setIsCountdownFinished(false);
+        setLoading(false);
+    }).catch(error => {
+      console.error('An error occurred:', error);
+    });
+      // fetch("/api/pre_sales_data")
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setCountdownDate(data.date);
+      //     setMinOrder(data.minOrder);
+      //     setPrice(data.price);
+      //     setGoal(data.goal);
+      //     setLoading(false);
+      //     setIsCountdownFinished(false);
+      //   });
+      // fetch("/api/sales")
+      // .then((res) => res.json())
+      // .then((data) => {
+      //   setLoading(false);
+      // });
     }
   }, [isCountdownFinished]);
   if (isLoading)
@@ -62,7 +83,7 @@ export default function Home() {
         <Header />
         <div className="relative w-full mb-12  items-center justify-start flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy  price={price} minOrder={minOrder} placeOrder={placeOrder} />
+          <Buy goal={goal} amountRaised={amountRaised} price={price} minOrder={minOrder} placeOrder={placeOrder} />
         </div>
       </Container>
       <Container background={"[url('/brown.svg')]"}>
