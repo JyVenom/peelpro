@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Info from "./_components/info";
 import { Container } from "./_components/container"
 import Tokenomics from "./_components/tokenomics";
+import Footer from "./_components/footer";
 
 export default function Home() {
   function placeOrder(amount: number) {
@@ -43,21 +44,6 @@ export default function Home() {
     }).catch(error => {
       console.error('An error occurred:', error);
     });
-      // fetch("/api/pre_sales_data")
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setCountdownDate(data.date);
-      //     setMinOrder(data.minOrder);
-      //     setPrice(data.price);
-      //     setGoal(data.goal);
-      //     setLoading(false);
-      //     setIsCountdownFinished(false);
-      //   });
-      // fetch("/api/sales")
-      // .then((res) => res.json())
-      // .then((data) => {
-      //   setLoading(false);
-      // });
     }
   }, [isCountdownFinished]);
   if (isLoading)
@@ -92,8 +78,9 @@ export default function Home() {
       <Container background={"[url('/background.svg')]"}>
         <Tokenomics/>
       </Container>
-
-
+      <Container background={"[url('/brown.svg')]"}>
+        <Footer/>
+      </Container>
     </main>
   );
 }

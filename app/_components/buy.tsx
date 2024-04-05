@@ -13,6 +13,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
     const [nana, setNANA] = useState<string>();
     const orderExists = (usd !=='' || nana !== '')
     const invalidOrder =  (Number(usd) < minOrder || Number(nana)/price < minOrder)
+
     const percentRaised = Math.max(100*amountRaised/goal, 10)
      const handleValueChange = (
         e: React.ChangeEvent<HTMLInputElement>,
@@ -84,8 +85,9 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
                 <input value = {nana} onChange={handleNANAChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>
         </div>
-        <div  className={`${ orderExists && invalidOrder ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
-        <button disabled={invalidOrder} onClick={()=>placeOrder(Number(usd))} className="bg-banana w-full h-20 rounded-2xl flex center">
+        <div  className={`${ amountRaised >= goal ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Pre-sale complete</div>
+        <div  className={`${ orderExists && invalidOrder && amountRaised < goal ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({minOrder/ price} Tokens)</div>
+        <button disabled={invalidOrder || amountRaised >= goal} onClick={()=>placeOrder(Number(usd))} className="bg-banana w-full h-20 rounded-2xl flex center">
             <span className="text-brown sm:text-xl md:text-2xl font-manrope font-semibold tracking-wider uppercase">PROCEED TO CHECKOUT NOW</span>
         </button>
       </div>
