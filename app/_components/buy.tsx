@@ -26,12 +26,12 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
         } else {
           const num = Number(newValue);
           if (isUSD) {
-            setUSD(newValue);
+            setUSD((Math.round(100*num)/100).toString());
             if (num >= minOrder) {
-              setNANA(Math.round(num / price).toString());
+              setNANA((Math.round(100*num / price)/100).toString());
             }
           } else {
-            setNANA(newValue);
+            setNANA((Math.round(100*num)/100).toString());
             if (num >= minOrder / price) {
               setUSD((Math.round(num * 100 * price) / 100).toString());
             }
