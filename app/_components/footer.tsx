@@ -8,7 +8,7 @@ export default function Footer() {
          NANACAT
       </div>
       <h1 className="lg:text-5xl md:text-4xl text-3xl xl:text-6xl text-center font-red font-bold max-w-6xl text-brown">
-        Orders For Harambe AI Tokens Are Rolling In As You're Reading This.
+        Orders For Harambe AI Tokens Are Rolling In As You&apos;re Reading This.
       </h1>
       <div className="bg-pink my-4 px-12 text-nowrap py-2 font-red font-medium text-dbrown rounded-full">
         1 HARAMBE AI = $ 0.224 USD
