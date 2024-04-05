@@ -78,7 +78,7 @@ export default function Home() {
       <Container background={"[url('/background.svg')]"}>
         <Tokenomics/>
       </Container>
-      <Container background={"[url('/brown.svg')]"}>
+      <Container background={"pale"}>
         <Footer/>
       </Container>
     </main>
