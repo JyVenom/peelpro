@@ -11,6 +11,10 @@ const config: Config = {
       'brown': "#6b3e26",
       'banana': "#ffe135",
       'pale': "#fffbc9",
+      'white': "#ffffff",
+      'black': "#000000",
+      'pink': "#EA5584",
+      'dbrown': "#582f2f"
     },
     extend: {
       fontFamily: {

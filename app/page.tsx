@@ -1,48 +1,99 @@
 "use client";
-import Navbar from "./_components/navbar/Navbar";
+import Navbar from "./_components/navbar";
 import Header from "./_components/header";
 import Description from "./_components/description";
 import Buy from "./_components/buy";
 import { useEffect, useState } from "react";
-import Loading from "./_components/Loading";
+import Info from "./_components/info";
+import { Container } from "./_components/container"
+import Tokenomics from "./_components/tokenomics";
 
 export default function Home() {
+  function placeOrder(amount: number) {
+    setLoading(true);
+    fetch(`/api/buy/${amount}`, { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.href = data.checkoutSessionUrl;
+        setLoading(false);
+      });
+  }
   const [isCountdownFinished, setIsCountdownFinished] = useState(true);
   const [countdownDate, setCountdownDate] = useState("");
-  const [price,setPrice] = useState(0);
+  const [goal, setGoal] = useState(0);
+  const [amountRaised, setAmountRaised] = useState(0);
+  const [price, setPrice] = useState(0);
   const [minOrder, setMinOrder] = useState(0);
   const [isLoading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     if (isCountdownFinished) {
       setLoading(true);
-      fetch("/api/pre_sales_data")
-        .then((res) => res.json())
-        .then((data) => {
-          setCountdownDate(data.date);
-          setMinOrder(data.minOrder);
-          setPrice(data.price);
-          setLoading(false);
-          setIsCountdownFinished(false);
-        });
+      Promise.all([fetch("/api/pre_sales_data")
+      .then((res) => res.json()), fetch("/api/sales")
+      .then((res) => res.json())]).then(([pre_sales_data, total_sales]) => {
+        setCountdownDate(pre_sales_data.date);
+        setMinOrder(pre_sales_data.minOrder);
+        setPrice(pre_sales_data.price);
+        setGoal(pre_sales_data.goal);
+        setAmountRaised(total_sales.raised)
+        setIsCountdownFinished(false);
+        setLoading(false);
+    }).catch(error => {
+      console.error('An error occurred:', error);
+    });
+      // fetch("/api/pre_sales_data")
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setCountdownDate(data.date);
+      //     setMinOrder(data.minOrder);
+      //     setPrice(data.price);
+      //     setGoal(data.goal);
+      //     setLoading(false);
+      //     setIsCountdownFinished(false);
+      //   });
+      // fetch("/api/sales")
+      // .then((res) => res.json())
+      // .then((data) => {
+      //   setLoading(false);
+      // });
     }
   }, [isCountdownFinished]);
-  if (isLoading) return (<Loading/>)
+  if (isLoading)
+    return (
+      <div className="flex center flex-col full absolute top-0 left-0 bg-banana">
+        <h1 className="text-5xl font-red font-bold text-brown text-center">
+          Loading ...
+        </h1>
+      </div>
+    );
 
   return (
-    <main className="flex bg-cover bg-[url('/background.svg')] full">
-      <div className=" flex full flex-col max-w-screen-2xl center">
+    <main className={`${isOpen ? "max-h-screen overflow-x-hidden fixed" : ""} flex full flex-col`}>
+      <Container background={"[url('/background.svg')]"}>
         <Navbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
           date={countdownDate}
-          onCountdownOver={() => {
+          onFinished={() => {
             setIsCountdownFinished(true);
           }}
         />
         <Header />
-        <div className="flex xl:flex-col flex-col-reverse">
+        <div className="relative w-full mb-12  items-center justify-start flex xl:flex-col flex-col-reverse">
           <Description />
-          <Buy price = {price} minOrder={minOrder}/>
+          <Buy goal={goal} amountRaised={amountRaised} price={price} minOrder={minOrder} placeOrder={placeOrder} />
         </div>
-      </div>
+      </Container>
+      <Container background={"[url('/brown.svg')]"}>
+        <Info price={price} date={countdownDate}/>
+      </Container>
+      <Container background={"[url('/background.svg')]"}>
+        <Tokenomics/>
+      </Container>
+
+
     </main>
   );
 }

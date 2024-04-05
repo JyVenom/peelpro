@@ -1,5 +1,12 @@
 'use client'
-import { OpenProps } from "./Navbar";
+
+import { Dispatch, SetStateAction } from "react";
+
+export interface OpenProps {
+    isOpen: boolean;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+  }
+
 export default function Hamburger({ isOpen, setIsOpen }: OpenProps) {
     const handleClick = () => {
       setIsOpen(!isOpen);

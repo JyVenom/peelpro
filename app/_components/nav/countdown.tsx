@@ -34,7 +34,7 @@ export default function Countdown({ date, onFinished }: CountdownProps) {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [date, onFinished]);
   const format = (num: number): string => {
     return num.toString().padStart(2, "0");
   };
