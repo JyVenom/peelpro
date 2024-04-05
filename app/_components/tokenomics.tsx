@@ -1,6 +1,6 @@
 export default function Tokenomics() {
   return (
-    <div className="flex flex-col items-center lg:items-start lg:justify-between lg:flex-row h-fit p-12 xl:p-20 w-full">
+    <div className="flex flex-col items-center lg:items-center lg:justify-between lg:flex-row h-fit p-12 xl:p-20 w-full">
       <div className="lg:justify-start justify-center lg:text-start text-center w-full flex flex-grow flex-col">
         <h2 className="font-red pb-2 text-brown text-5xl font-bold">
           Tokenomics
@@ -19,7 +19,7 @@ export default function Tokenomics() {
           </a>
         </p>
         <div className="flex w-full justify-center my-10 lg:hidden">
-        <img src="/tokenomics.svg" className="w-full lg:w-1/2 max-w-md aspect-square  lg:ml-12 xl:ml-20" />
+            <TokenomicsCircle/>
         </div>
         <span className="w-full my-4 h-[1px]  bg-brown"></span>
         <div className="flex flex-row justify-between">
@@ -50,17 +50,8 @@ export default function Tokenomics() {
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
       </div>
-      <div className="relative w-full lg:w-2/3 max-w-xl aspect-square hidden lg:flex lg:ml-12 xl:ml-20 ">
-        <div className="w-fi absolute top-[5%] left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
-        <div className="w-fi absolute top-[-5%] left-1/2 -translate-x-10 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">10% CEX Listings</div>
-
-        <div className="w-fi absolute top-0 left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
-
-        <div className="w-fi absolute top-0 left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
-
-        <div className="w-fi absolute top-0 left-0 text-sm py-2 px-4 bg-white text-pink rounded-md h-fit">5% Marketing</div>
-
-        <img src="/tokenomics.svg" className="w-full h-full" />
+      <div className="hidden lg:flex w-full h-fit">
+      <TokenomicsCircle/>
       </div>
     </div>
   );
@@ -69,7 +60,13 @@ export default function Tokenomics() {
 
 function TokenomicsCircle(){
     return (
-        <img src="/tokenomics.svg" className="w-full lg:w-1/2 max-w-lg aspect-square hidden lg:flex lg:ml-12 xl:ml-20" />
-
+        <div className="relative w-full m-8 lg:w-2/3 max-w-lg aspect-square lg:ml-24 xl:ml-40 lg:mr-12 xl:mr-20 text-dbrown">
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[6%] lg:left-[-5%] left-0 xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">10% CEX Listings</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[-5%] left-[45%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">5% Marketing</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[40%] left-[-7%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">15% Burned</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap absolute top-[70%] left-[70%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% DEX Liquidity</div>
+        <div className="w-fit shadow-md absolute text-start text-xs text-nowrap  top-[10%] left-[80%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">30% Pre-sale</div>
+        <img src="/tokenomics.svg" className="w-full h-full" />
+      </div>
     )
 }
