@@ -52,11 +52,11 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
         <div className="flex justify-center items-center bg-brown w-fit px-4 absolute left-1/2 -translate-x-1/2 h-10 rounded-full top-0 -translate-y-1/2">
           <h4 className="text-pale font-red text-sm text-center">
-            1 Harambe AI = $ {price} USD
+            1 NANACAT AI = $ {price} USD
           </h4>
         </div>
         <h3 className=" mt-4 font-red sm:text-2xl text-xl md:text-3xl text-brown font-semibold">
-          Join The Harambe AI Pre-Sale
+          Join The Nanacat AI Pre-Sale
         </h3>
         <p className="mt-2 text-brown font-red text-sm sm:text-md text-center">
           You will be directed to a secure checkout page where you can finalize
@@ -71,7 +71,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
             USD Raised: <b>$ {amountRaised}</b>
           </span>
         </div>
-        <h3 className="text-brown font-red font-semibold sm:text-lg text-md md:text-xl">How many Harambe AI Tokens would you like to buy?</h3>
+        <h3 className="text-brown font-red font-semibold sm:text-lg text-md md:text-xl">How many Nanacat AI Tokens would you like to buy?</h3>
         <div className="flex flex-row relative w-full my-6 h-36 rounded-2xl border-2 border-banana">
             <div className="w-[2px] z-10 top-0 h-full bg-banana absolute left-1/2 -translate-x-1/2"></div>
             <div className="relative w-1/2 h-full flex justify-center items-center pl-4">
@@ -80,7 +80,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
                 <input value = {usd} onChange={handleUSDChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>
             <div className="relative w-1/2 h-full flex justify-center items-center pl-4">
-                <span className="font-red text-brown text-sm font-bold w-full  text-center absolute top-2 left-1/2 -translate-x-1/2">$HarambeAI Tokens</span>
+                <span className="font-red text-brown text-sm font-bold w-full  text-center absolute top-2 left-1/2 -translate-x-1/2">$NANACAT Tokens</span>
                 <span className="text-2xl font-red pr-1  h-fit text-[#9ca3af]">🍌</span>
                 <input value = {nana} onChange={handleNANAChange} pattern="[0-9]" className="appearance-none font-red bg-pale h-fit border-none w-full text-brown leading-tight focus:outline-none text-2xl placeholder-[#9ca3af]" type="number" placeholder="0"></input>
             </div>

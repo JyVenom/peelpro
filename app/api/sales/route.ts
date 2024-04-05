@@ -5,10 +5,10 @@ type Transaction = {
     amount: number;
 }
 export async function GET(req: Request) {
-    const startingAmount = 173
+    const startingAmount = 173  // Actual cringe/funny/:skull: move - Jerry
     const { data, error } = await supabaseClient.from('sales') // Replace with your table name
     .select('success, amount')
-    .eq('success', true) // Filter for future dates
+    .eq('success', true) // Filter for successes
     if (data == null) return Response.json({raised: 0})
     const totalAmount: number = data.reduce((sum: number, transaction: Transaction) => {
         return sum + transaction.amount;

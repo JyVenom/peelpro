@@ -34,12 +34,12 @@ export default function Info({ price, date }: InfoProps) {
             height={64}
           />
           <h2 className="mb-4 text-xl font-red font-bold text-banana">
-            Harambe Is Set To Rock The Charts With a Whopping 100% ROI (This
+            Nanacat Is Set To Rock The Charts With a Whopping 100% ROI (This
             Year Alone!)
           </h2>
           <p className="mb-4 text-md font-red font-medium text-banana ">
             Each successful trade triggers the purchase and immediate burning of
-            Harambe Tokens, increasing demand, reducing supply, and driving
+            Nanacat Tokens, increasing demand, reducing supply, and driving
             prices to the moon.
           </p>
           <a
@@ -49,7 +49,7 @@ export default function Info({ price, date }: InfoProps) {
             Get my tokens
           </a>
           <p className="text-md text-banana font-red font-medium">
-            1 HARAMBE AI = <b>$ {price} USD</b>
+            1 NANACAT AI = <b>$ {price} USD</b>
           </p>
           <p className="text-sm text-banana font-red">
             Hurry - Token price increases on {monthNames[month]} {day}

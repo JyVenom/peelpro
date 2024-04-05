@@ -6,7 +6,7 @@ export default function Tokenomics() {
           Tokenomics
         </h2>
         <h2 className="pb-2 font-red text-pink text-2xl font-bold">
-          690M Total Tokens. No Tax. No Team Tokens.
+          100M Total Tokens. No Tax. No Team Tokens.
         </h2>
         <p className="font-red text-md text-brown">
           Token Contract Address{" "}
