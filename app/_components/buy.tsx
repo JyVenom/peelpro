@@ -48,7 +48,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
       };
 
   return (
-    <div id="buy" className="flex justify-center h-fit w-full px-8 my-16">
+    <div id="buy" className="flex justify-center h-fit w-full sm:px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
         <div className="flex justify-center items-center bg-brown w-fit px-4 absolute left-1/2 -translate-x-1/2 h-10 rounded-full top-0 -translate-y-1/2">
           <h4 className="text-pale font-red text-sm text-center">

@@ -12,7 +12,7 @@ import Footer from "./_components/footer";
 export default function Home() {
   function placeOrder(amount: number) {
     setLoading(true);
-    fetch(`http://peelpro.vercel.app/api/buy/${amount}`, { method: "POST" })
+    fetch(`/api/buy/${amount}`, { method: "POST" })
       .then((res) => res.json())
       .then((data) => {
         window.location.href = data.checkoutSessionUrl;

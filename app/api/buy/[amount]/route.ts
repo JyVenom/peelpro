@@ -40,7 +40,7 @@ export async function POST(
         ],
       },
     },
-    successUrl: `http://localhost:3000/payment_success/${uuid}`,
+    successUrl: `http://peelpro.vercel.app/payment_success/${uuid}`,
 
     customizations: {
       leftPanelColor: "#ffe135",
