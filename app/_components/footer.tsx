@@ -3,7 +3,7 @@ import { HorizontalSocials } from "./nav/socials";
 
 export default function Footer() {
   return (
-    <div className="h-fit w-full flex flex-col justify-center items-center lg:p-12  p-8 xl:p-20 xl:pb-8 lg:pb-8 bg-cover bg-[url('/brown.svg')]">
+    <div className="h-fit w-full flex flex-col justify-center items-center lg:p-12  p-8 xl:p-20 xl:pb-8 lg:pb-8 bg-cover ">
         <div className="bg-banana border-2 border-dbrown my-6 px-12 text-nowrap py-2 font-red font-medium text-dbrown rounded-full">
          NANACAT
       </div>
