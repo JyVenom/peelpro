@@ -8,16 +8,16 @@ export default function Tokenomics() {
         <h2 className="pb-2 font-red text-pink text-2xl font-bold">
           100M Total Tokens. No Tax. No Team Tokens.
         </h2>
-        <p className="font-red text-md text-brown">
-          Token Contract Address{" "}
-          <a
-            className="text-pink underline text-sm"
-            href="http://kys.web.app"
-            target="_blank"
-          >
-            (0x548….DB3C2)
-          </a>
-        </p>
+        {/*<p className="font-red text-md text-brown">*/}
+        {/*  Token Contract Address{" "}*/}
+        {/*  <a*/}
+        {/*    className="text-pink underline text-sm"*/}
+        {/*    href="http://kys.web.app"*/}
+        {/*    target="_blank"*/}
+        {/*  >*/}
+        {/*    (0x548….DB3C2)*/}
+        {/*  </a>*/}
+        {/*</p>*/}
         <div className="flex w-full justify-center my-10 lg:hidden">
             <TokenomicsCircle/>
         </div>
@@ -26,27 +26,27 @@ export default function Tokenomics() {
           <h3 className="font-red text-lg text-dbrown">
             Marketing & community engagement:
           </h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">34.5 M</h3>
+          <h3 className="font-bold font-red text-lg text-dbrown">20 M</h3>
         </div>
-        <span className="w-full my-4 h-[1px] bg-brown"></span>
-        <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">CEX listings:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">69 M</h3>
-        </div>
+        {/*<span className="w-full my-4 h-[1px] bg-brown"></span>*/}
+        {/*<div className="flex flex-row justify-between">*/}
+        {/*  <h3 className="font-red text-lg text-dbrown">CEX listings:</h3>*/}
+        {/*  <h3 className="font-bold font-red text-lg text-dbrown">69 M</h3>*/}
+        {/*</div>*/}
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
           <h3 className="font-red text-lg text-dbrown">Burned on mint:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">103.5</h3>
+          <h3 className="font-bold font-red text-lg text-dbrown">30 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
           <h3 className="font-red text-lg text-dbrown">Presale:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">207 M</h3>
+          <h3 className="font-bold font-red text-lg text-dbrown">40 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">DEX listing:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">276 M</h3>
+          <h3 className="font-red text-lg text-dbrown">Promotions & giveaways:</h3>
+          <h3 className="font-bold font-red text-lg text-dbrown">10 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
       </div>
@@ -61,11 +61,11 @@ export default function Tokenomics() {
 function TokenomicsCircle(){
     return (
         <div className="relative w-full m-8 lg:w-2/3 max-w-lg aspect-square lg:ml-24 xl:ml-40 lg:mr-12 xl:mr-20 text-dbrown">
-        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[6%] lg:left-[-5%] left-0 xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">10% CEX Listings</div>
-        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[-5%] left-[45%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">5% Marketing</div>
-        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[40%] left-[-7%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">15% Burned</div>
-        <div className="w-fit shadow-md text-start text-xs text-nowrap absolute top-[70%] left-[70%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% DEX Liquidity</div>
-        <div className="w-fit shadow-md absolute text-start text-xs text-nowrap  top-[10%] left-[80%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">30% Pre-sale</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[44%] lg:left-[-17%] left-0 xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">10% Giveaways</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[12%] left-[2%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">20% Marketing</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[80%] left-[20%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">30% Burned</div>
+        {/*<div className="w-fit shadow-md text-start text-xs text-nowrap absolute top-[70%] left-[70%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% </div>*/}
+        <div className="w-fit shadow-md absolute text-start text-xs text-nowrap  top-[40%] left-[80%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% Pre-Sale</div>
         <img src="/tokenomics.svg" className="w-full h-full" />
       </div>
     )

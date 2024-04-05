@@ -79,7 +79,7 @@ export default function Home() {
         <Tokenomics/>
       </Container>
       <Container background={"pale"}>
-        <Footer/>
+        <Footer price={price}/>
       </Container>
     </main>
   );

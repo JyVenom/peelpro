@@ -35,13 +35,11 @@ export default function Info({ price, date }: InfoProps) {
             height={64}
           />
           <h2 className="mb-4 text-xl font-red font-bold text-banana">
-            Nanacat Is Set To Rock The Charts With a Whopping 100% ROI (This
-            Year Alone!)
+            About Banana Cat
           </h2>
           <p className="mb-4 text-md font-red font-medium text-banana ">
-            Each successful trade triggers the purchase and immediate burning of
-            Nanacat Tokens, increasing demand, reducing supply, and driving
-            prices to the moon.
+            We are a Solana based token created to join in on the huge potential profits of the current meme coin industry. This is a meme coin, don’t take it too seriously. Invest if you want ig.
+            Hassle Free Profits
           </p>
           <a
             className="mb-4 max-w-96 bg-pale p-4 font-red uppercase font-bold text-lg w-full text-center text-brown rounded-2xl"
@@ -60,44 +58,44 @@ export default function Info({ price, date }: InfoProps) {
       </div>
       <div className="flex flex-row flex-grow flex-wrap">
         <GlassItem
-          title={"Hassle-Free Profits"}
+            title={"Pre-Sale Discount"}
+            info={
+              "There is a discount on the pre-sale, but the longer you wait, the more expensive the pre-sale price becomes."
+            }
+            icon={"/brain.svg"}
+        />
+        <GlassItem
+            title={"Burned coins"}
+            info={
+              "As a result of our burn rate, the coins will become increasingly rare and higher in price. Shit is valuable."
+            }
+            icon={"/brain.svg"}
+        />
+        <GlassItem
+          title={"Game Plan"}
           info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
+            "We plan to host our pre-sale until we hit $25k, or 400 mil $NANACAT, whichever comes first 😈"
           }
           icon={"/brain.svg"}
         />
         <GlassItem
-          title={"Hassle-Free Profits"}
+          title={"Market Trends"}
           info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
+            "Bitcoin is the largest indicator of the health of the crypto market. Its gone up over 140% in the past 6 months! Stonks are stonks."
           }
           icon={"/brain.svg"}
         />
         <GlassItem
-          title={"Hassle-Free Profits"}
+          title={"Developer Thoughts"}
           info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
+            "In my completely unbiased opinion, $NANACAT is only going up. People (me) have been saying it's the best crypto of all time. Numbers don’t lie 🥱"
           }
           icon={"/brain.svg"}
         />
         <GlassItem
-          title={"Hassle-Free Profits"}
+          title={"Buy It"}
           info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
-          }
-          icon={"/brain.svg"}
-        />
-        <GlassItem
-          title={"Hassle-Free Profits"}
-          info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
-          }
-          icon={"/brain.svg"}
-        />
-        <GlassItem
-          title={"Hassle-Free Profits"}
-          info={
-            "No active trading needed! Simply hold the tokens and watch your gains grow."
+            "Green is green. Lets roll out this dough together 🥳"
           }
           icon={"/brain.svg"}
         />

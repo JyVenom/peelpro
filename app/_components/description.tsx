@@ -5,10 +5,9 @@ export default function Description() {
       <div className="flex flex-row items-center overflow-hidden min-w-72 p-4">
         <Image width={64} height={64} className="w-16 h-16" src={"/money.svg"} alt="money"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
-          <h4 className="text-md font-bold font-red">Buy Back & Burn System</h4>
+          <h4 className="text-md font-bold font-red">Solana Based Token</h4>
           <p className="text-sm font-red">
-            Actively repurchases its own tokens, making them rarer and more
-            valuable.
+            If you have diamond balls you know this
           </p>
         </div>
       </div>
@@ -16,11 +15,10 @@ export default function Description() {
         <Image width={64} height={64} className="w-16 h-16" src={"/brain.svg"} alt="brain"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
           <h4 className="text-md font-bold font-red">
-            1st Decentralized Hedge Fund
+            Banana Cat
           </h4>
           <p className="text-sm font-red">
-            100% autonomous, profits passively return to the Harambe AI
-            community of holders.
+            Remember it's all memes. Now put your life savings on $NANACAT.
           </p>
         </div>
       </div>
@@ -28,11 +26,10 @@ export default function Description() {
         <Image width={64} height={64} className="w-16 h-16" src={"/coin.svg"} alt="coin"/>
         <div className="text-brown w-72 pl-4 flex flex-col text-wrap">
           <h4 className="text-md font-bold font-red">
-            30% More Profitable Than The Market
+            Choose Your Future
           </h4>
           <p className="text-sm font-red">
-            Our revolutionary AI trading bot is designed to outperform top
-            crypto traders.
+            We can’t tell you what to do… but if we could we would tell you to TAKE OUT A MORTGAGE ON $NANACAT!!!
           </p>
         </div>
       </div>

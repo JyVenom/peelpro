@@ -56,7 +56,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
           </h4>
         </div>
         <h3 className=" mt-4 font-red sm:text-2xl text-xl md:text-3xl text-brown font-semibold">
-          Join The Nanacat AI Pre-Sale
+            Hop on the Banana Cat Pre-Sale
         </h3>
         <p className="mt-2 text-brown font-red text-sm sm:text-md text-center">
           You will be directed to a secure checkout page where you can finalize
