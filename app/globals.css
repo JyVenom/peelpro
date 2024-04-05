@@ -23,6 +23,9 @@
 }
 
 @layer utilities {
+  .parent:hover .child {
+    @apply scale-[101%] border-pale border-2
+  }
   .center {
     @apply justify-center items-center
   }

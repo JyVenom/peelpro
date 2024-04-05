@@ -51,6 +51,7 @@ export function HorizontalSocials() {
   return (
     <div>
       <div className="flex flex-row w-full justify-between">
+  
         <HorizontalSocialIcon
           image={"/certik.svg"}
           url={"https://kys.web.app"}
