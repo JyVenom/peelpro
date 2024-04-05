@@ -59,11 +59,11 @@ export default function Tokenomics() {
 function TokenomicsCircle(){
     return (
         <div className="relative w-full m-8 lg:w-2/3 max-w-lg aspect-square lg:ml-24 xl:ml-40 lg:mr-12 xl:mr-20 text-dbrown">
-        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[44%] lg:left-[-17%] left-0 xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">10% Giveaways</div>
-        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[12%] left-[2%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">20% Marketing</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[45%] lg:left-[-10%] left-0 xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">10% Giveaways</div>
+        <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[13%] left-[6%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">20% Marketing</div>
         <div className="w-fit shadow-md text-start text-xs text-nowrap  absolute top-[80%] left-[20%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">30% Burned</div>
         {/*<div className="w-fit shadow-md text-start text-xs text-nowrap absolute top-[70%] left-[70%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% </div>*/}
-        <div className="w-fit shadow-md absolute text-start text-xs text-nowrap  top-[40%] left-[80%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% Pre-Sale</div>
+        <div className="w-fit shadow-md absolute text-start text-xs text-nowrap  top-[40%] left-[81%] xl:text-sm font-red lg:text-xs md:text-base  py-2 px-4 bg-white rounded-md h-fit">40% Pre-Sale</div>
         <img src="/tokenomics.svg" className="w-full h-full" />
       </div>
     )
