@@ -23,7 +23,7 @@ export default function Info({ price, date }: InfoProps) {
   const month = tempDate.getMonth();
   const day = tempDate.getDate();
   return (
-    <div className="flex flex-col xl:flex-row h-fit p-8 md:p-12 xl:p-20 w-full ">
+    <div className="flex flex-col xl:flex-row h-fit p-8 md:p-12 xl:p-20 w-full bg-cover bg-[url('/brown.svg')]">
       <div className="flex relative parent w-fit h-fit p-2">
         <div className="absolute left-0 child top-0 m-2 flex flex-col h-[calc(100%-1rem)] w-full xl:w-96 p-10 backdrop-blur-md bg-pale/20 rounded-2xl shadow-lg"></div>
         <div className="flex z-10 flex-col h-fit w-full xl:w-96 p-10 rounded-2xl shadow-lg">
