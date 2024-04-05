@@ -46,22 +46,6 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
         handleValueChange(e, false);
       };
 
-    const handleClick = () => {
-        fetch("/api/buy", {
-            method: 'POST',
-            body: JSON.stringify({ amount: usd }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                window.location.href = data["checkoutSessionUrl"]
-            })
-            .catch(error => console.error('Error:', error));
-    };
-
   return (
     <div id="buy" className="flex justify-center h-fit w-full px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
