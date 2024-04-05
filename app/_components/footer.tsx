@@ -12,7 +12,7 @@ export default function Footer({ price } : FooterProps) {
          NANACAT
       </div>
       <h1 className="lg:text-5xl md:text-4xl text-3xl xl:text-6xl text-center font-red font-bold max-w-6xl text-brown">
-        Orders For Nanacat AI Tokens Are Rolling In As You&apos;re Reading This.
+        Orders For NanaCat AI Tokens Are Rolling In As You&apos;re Reading This.
       </h1>
       <div className="bg-pink my-4 px-12 text-nowrap py-2 font-red font-medium text-dbrown rounded-full">
         1 NANACAT AI = $ {price} USD
@@ -49,7 +49,7 @@ export default function Footer({ price } : FooterProps) {
       <span className="w-full hidden sm:flex h-[1px] bg-dbrown my-4"></span>
       <div className="relative flex flex-col items-center sm:flex-row pt-2 sm:pb-0 sm:justify-between w-full h-fit ">
         <h5 className="text-dbrown max-sm:text-sm font-red max-sm:py-1">
-        © 2024 Nanacat Token
+        © 2024 NanaCat Token
         </h5>
         <b className="text-dbrown max-sm:text-sm font-red max-sm:py-1">
         support@nanacat.ai

@@ -71,7 +71,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
             USD Raised: <b>$ {amountRaised}</b>
           </span>
         </div>
-        <h3 className="text-brown font-red font-semibold sm:text-lg text-md md:text-xl">How many Nanacat AI Tokens would you like to buy?</h3>
+        <h3 className="text-brown font-red font-semibold sm:text-lg text-md md:text-xl">How many NanaCat AI Tokens would you like to buy?</h3>
         <div className="flex flex-row relative w-full my-6 h-36 rounded-2xl border-2 border-banana">
             <div className="w-[2px] z-10 top-0 h-full bg-banana absolute left-1/2 -translate-x-1/2"></div>
             <div className="relative w-1/2 h-full flex justify-center items-center pl-4">
