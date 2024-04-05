@@ -11,16 +11,17 @@ export default function Footer({ price } : FooterProps) {
         <div className="bg-banana border-2 border-dbrown my-6 px-12 text-nowrap py-2 font-red font-medium text-dbrown rounded-full">
          NANACAT
       </div>
-      <h1 className="lg:text-5xl md:text-4xl text-3xl xl:text-6xl text-center font-red font-bold max-w-6xl text-brown">
+      <h1 className="lg:text-5xl md:text-4xl text-lg sm:text-3xl xl:text-6xl text-center font-red font-bold max-w-6xl text-brown">
         Orders For NanaCat AI Tokens Are Rolling In As You&apos;re Reading This.
       </h1>
-      <div className="bg-pink my-4 px-12 text-nowrap py-2 font-red font-medium text-dbrown rounded-full">
-        1 NANACAT AI = $ {price} USD
-      </div>
-      <p className="text-dbrown font-red md:text-base text-sm">
-        Hurry - Token price increases on <b>April 4th!</b>
-      </p>
-      <a href="#buy" className="hover:scale-[101%] rounded-2xl bg-brown w-full text-no-wrap text-center py-4 my-6 min-w-fit uppercase text-2xl text-banana font-red font-bold max-w-sm">
+        <div
+            className="bg-pink my-4 md:px-12 px-8 py-2 md:text-base text-xs text-nowrap md:py-2 font-red font-medium text-dbrown rounded-full">
+            1 NANACAT AI = $ {price} USD
+        </div>
+        <p className="text-dbrown font-red md:text-base text-sm">
+            Hurry - Token price increases on <b>April 4th!</b>
+        </p>
+        <a href="#buy" className="hover:scale-[101%] rounded-2xl bg-brown w-full text-no-wrap text-center py-4 my-6 min-w-fit uppercase text-2xl text-banana font-red font-bold max-w-sm">
         GET MY TOKENS
       </a>
       <div className="flex flex-col items-center sm:flex-row sm:justify-between w-full h-fit mt-4">

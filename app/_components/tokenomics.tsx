@@ -23,10 +23,8 @@ export default function Tokenomics() {
         </div>
         <span className="w-full my-4 h-[1px]  bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="text-start font-red text-lg text-dbrown">
-            Marketing & community engagement:
-          </h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">20 M</h3>
+          <h3 className="text-start font-red text-lg text-dbrown">Marketing & community engagement:</h3>
+          <h3 className="font-bold text-start font-red text-lg text-dbrown text-nowrap">20 M</h3>
         </div>
         {/*<span className="w-full my-4 h-[1px] bg-brown"></span>*/}
         {/*<div className="flex flex-row justify-between">*/}
@@ -35,18 +33,18 @@ export default function Tokenomics() {
         {/*</div>*/}
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">Burned on mint:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">30 M</h3>
+          <h3 className="text-start font-red text-lg text-dbrown">Burned on mint:</h3>
+          <h3 className="font-bold text-start font-red text-lg text-dbrown text-nowrap">30 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">Presale:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">40 M</h3>
+          <h3 className="text-start font-red text-lg text-dbrown">Presale:</h3>
+          <h3 className="font-bold text-start font-red text-lg text-dbrown text-nowrap">40 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">Promotions & giveaways:</h3>
-          <h3 className="font-bold font-red text-lg text-dbrown">10 M</h3>
+          <h3 className="text-start font-red text-lg text-dbrown">Promotions & giveaways:</h3>
+          <h3 className="font-bold text-start font-red text-lg text-dbrown text-nowrap">10 M</h3>
         </div>
         <span className="w-full my-4 h-[1px] bg-brown"></span>
       </div>
