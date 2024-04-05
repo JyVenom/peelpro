@@ -1,6 +1,6 @@
 export default function Tokenomics() {
   return (
-    <div className="flex flex-col items-center lg:items-center lg:justify-between lg:flex-row h-fit p-12 xl:p-20 w-full">
+    <div className="flex flex-col items-center lg:items-center lg:justify-between lg:flex-row h-fit p-8 md:p-12 xl:p-20 w-full">
       <div className="lg:justify-start justify-center lg:text-start text-center w-full flex flex-grow flex-col">
         <h2 className="font-red pb-2 text-brown text-5xl font-bold">
           Tokenomics
@@ -23,7 +23,7 @@ export default function Tokenomics() {
         </div>
         <span className="w-full my-4 h-[1px]  bg-brown"></span>
         <div className="flex flex-row justify-between">
-          <h3 className="font-red text-lg text-dbrown">
+          <h3 className="text-start font-red text-lg text-dbrown">
             Marketing & community engagement:
           </h3>
           <h3 className="font-bold font-red text-lg text-dbrown">20 M</h3>

@@ -56,7 +56,7 @@ export default function Home() {
     );
 
   return (
-    <main className={`${isOpen ? "max-h-screen overflow-x-hidden fixed" : ""} flex full flex-col`}>
+    <main className={`${isOpen ? "h-screen overflow-y-hidden fixed" : ""} flex full flex-col overflow-x-hidden`}>
       <Container background={"[url('/background.svg')]"}>
         <Navbar
           isOpen={isOpen}

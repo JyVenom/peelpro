@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   .order('date', { ascending: true }) // Order by date ascending
   .limit(1)
   console.log(data)
-  if (data != null){
+  if (data != null && data.length > 0){
     return Response.json(data[0])
-  }
+  } 
 }

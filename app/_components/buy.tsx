@@ -11,7 +11,7 @@ interface BuyProps {
 export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } : BuyProps) {
     const [usd, setUSD] = useState<string>();
     const [nana, setNANA] = useState<string>();
-    const orderExists = (usd !=='' || nana !== '')
+    const orderExists: boolean = (usd || nana) ? true : false
     const invalidOrder =  (Number(usd) < minOrder || Number(nana)/price < minOrder)
 
     const percentRaised = Math.max(100*amountRaised/goal, 10)
@@ -48,7 +48,7 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
       };
 
   return (
-    <div id="buy" className="flex justify-center h-fit w-full px-8 my-16">
+    <div id="buy" className="flex justify-center h-fit w-full sm:px-8 my-16">
       <div className="relative flex p-6 justfiy-center items-center flex-col w-full max-w-xl h-fit bg-pale rounded-lg shadow-2xl">
         <div className="flex justify-center items-center bg-brown w-fit px-4 absolute left-1/2 -translate-x-1/2 h-10 rounded-full top-0 -translate-y-1/2">
           <h4 className="text-pale font-red text-sm text-center">
@@ -86,8 +86,8 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
             </div>
         </div>
         <div  className={`${ amountRaised >= goal ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Pre-sale complete</div>
-        <div  className={`${ orderExists && invalidOrder && amountRaised < goal ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({Math.round(100*minOrder/ price)/100} Tokens)</div>
-        <button disabled={invalidOrder || amountRaised >= goal} onClick={()=>placeOrder(Number(usd))} className={`hover:enabled:scale-[101%] text-brown bg-banana w-full h-20 rounded-2xl flex center`}>
+        <div  className={`${ orderExists && invalidOrder && amountRaised < goal ? "opacity-100":"opacity-0"} text-[#cc0000] md:text-sm text-center text-xs font-red font-bold  py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({Math.round(100*minOrder/ price)/100} Tokens)</div>
+        <button disabled={invalidOrder || !orderExists || amountRaised >= goal} onClick={()=>placeOrder(Number(usd))} className={`enabled:hover:scale-[101%]   text-brown bg-banana w-full h-20 rounded-2xl flex center`}>
             <span className="sm:text-xl md:text-2xl font-manrope font-semibold tracking-wider uppercase">PROCEED TO CHECKOUT NOW</span>
         </button>
       </div>
