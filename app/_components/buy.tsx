@@ -86,8 +86,8 @@ export default function Buy({ amountRaised, goal, price, minOrder, placeOrder } 
             </div>
         </div>
         <div  className={`${ amountRaised >= goal ? "":"hidden"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Pre-sale complete</div>
-        <div  className={`${ orderExists && invalidOrder && amountRaised < goal ? "opacity-100":"opacity-0"} text-[#cc0000] font-red font-bold text-sm py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({Math.round(100*minOrder/ price)/100} Tokens)</div>
-        <button disabled={invalidOrder || amountRaised >= goal} onClick={()=>placeOrder(Number(usd))} className={`hover:enabled:scale-[101%] text-brown bg-banana w-full h-20 rounded-2xl flex center`}>
+        <div  className={`${ orderExists && invalidOrder && amountRaised < goal ? "opacity-100":"opacity-0"} text-[#cc0000] md:text-sm text-center text-xs font-red font-bold  py-1 transition-opacity duration-500`}>Error: Minimum order amount is ${minOrder} ({Math.round(100*minOrder/ price)/100} Tokens)</div>
+        <button disabled={invalidOrder || !orderExists || amountRaised >= goal} onClick={()=>placeOrder(Number(usd))} className={`enabled:hover:scale-[101%]  text-brown bg-banana w-full h-20 rounded-2xl flex center`}>
             <span className="sm:text-xl md:text-2xl font-manrope font-semibold tracking-wider uppercase">PROCEED TO CHECKOUT NOW</span>
         </button>
       </div>
