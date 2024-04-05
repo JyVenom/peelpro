@@ -12,7 +12,7 @@ import Footer from "./_components/footer";
 export default function Home() {
   function placeOrder(amount: number) {
     setLoading(true);
-    fetch(`/api/buy/${amount}`, { method: "POST" })
+    fetch(`http://peelpro.vercel.app/api/buy/${amount}`, { method: "POST" })
       .then((res) => res.json())
       .then((data) => {
         window.location.href = data.checkoutSessionUrl;
@@ -56,7 +56,7 @@ export default function Home() {
     );
 
   return (
-    <main className={`${isOpen ? "max-h-screen overflow-x-hidden fixed" : ""} flex full flex-col`}>
+    <main className={`${isOpen ? "max-h-screen overflow-y-hidden fixed" : ""} flex full flex-col`}>
       <Container background={"[url('/background.svg')]"}>
         <Navbar
           isOpen={isOpen}
