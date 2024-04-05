@@ -6,6 +6,7 @@ import Buy from "./_components/buy";
 import { useEffect, useState } from "react";
 import Info from "./_components/info";
 import { Container } from "./_components/container"
+import Tokenomics from "./_components/tokenomics";
 
 export default function Home() {
   function placeOrder(amount: number) {
@@ -59,7 +60,7 @@ export default function Home() {
           }}
         />
         <Header />
-        <div className="relative w-full mb-12 items-center justify-start flex xl:flex-col flex-col-reverse">
+        <div className="relative w-full mb-12  items-center justify-start flex xl:flex-col flex-col-reverse">
           <Description />
           <Buy  price={price} minOrder={minOrder} placeOrder={placeOrder} />
         </div>
@@ -67,7 +68,10 @@ export default function Home() {
       <Container background={"[url('/brown.svg')]"}>
         <Info price={price} date={countdownDate}/>
       </Container>
-      
+      <Container background={"[url('/background.svg')]"}>
+        <Tokenomics/>
+      </Container>
+
 
     </main>
   );

@@ -13,7 +13,8 @@ const config: Config = {
       'pale': "#fffbc9",
       'white': "#ffffff",
       'black': "#000000",
-      'green': "#57C478"
+      'pink': "#EA5584",
+      'dbrown': "#582f2f"
     },
     extend: {
       fontFamily: {
